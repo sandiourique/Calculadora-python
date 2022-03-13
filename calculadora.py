@@ -5,7 +5,6 @@ com um MENU utilizando condições de if, else sendo queo usuário escolha qual 
 colhido a função , o usuário é direcionado a ela e insere os parâmetros que desejam realizar as operações.
 as funições matemáticas receberem os números para realizar a operação, realizar o cálculo e imprimir o resultado para o usuário.
 """
-
 def somar(a, b):
     soma = a + b
     return print(f"O resultado da soma é: {soma}")
@@ -37,36 +36,22 @@ def calcular():
     
     try:
         escolha = int(input("Esolha uma opção do menu: "))
+        if escolha != 5 and escolha < 5:
+            a = int(input("Digite o primeiro valor: "))
+            b = int(input("Digite o segundo valor: "))
+        
     except Exception as e:
         print("Opção inválida.")
         calcular()
     
     if escolha == 1:
-        try:
-            a = int(input("Digite o primeiro valor: "))
-            b = int(input("Digite o segundo valor: "))
-        except Exception as e:
-            print("Número inválido.")
-            calcular()
         somar(a, b)
         calcular()
     elif escolha == 2:
-        try:
-            a = int(input("Digite o primeiro valor: "))
-            b = int(input("Digite o segundo valor: "))
-        except Exception as e:
-            print("Número inválido.")
-            calcular()
         subtrair(a, b)
         calcular()   
         
     elif escolha == 3:
-        try:
-            a = int(input("Digite o primeiro valor: "))
-            b = int(input("Digite o segundo valor: "))
-        except Exception as e:
-            print("Número inválido.")
-            calcular()
         if a != 0 and b != 0:
             dividir(a, b)
             calcular()
@@ -74,12 +59,6 @@ def calcular():
             print("Não podemos efetuar divisão com zero. Tente com outro número!")
             calcular() 
     elif escolha == 4:
-        try:
-            a = int(input("Digite o primeiro valor: "))
-            b = int(input("Digite o segundo valor: "))
-        except Exception as e:
-            print("Número inválido.")
-            calcular()
         multiplicar(a, b)
         calcular() 
     elif escolha == 5:
